@@ -3,10 +3,9 @@ package com.miguelvega.apifacturaelectronica.controller;
 import com.miguelvega.apifacturaelectronica.model.Customer;
 import com.miguelvega.apifacturaelectronica.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -21,6 +20,12 @@ public class CustomerController {
     @GetMapping("/customers")
     public List<Customer> getAllCustomers(){
         return customerRepository.findAll();
+    }
+
+
+    @PostMapping("/customers")
+    public Customer createCustomer(@Valid @RequestBody Customer customer){
+        return customerRepository.save(customer);
     }
 
 

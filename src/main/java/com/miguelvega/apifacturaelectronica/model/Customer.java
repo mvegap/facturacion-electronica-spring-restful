@@ -49,7 +49,7 @@ public class Customer implements Serializable {
     private String gender_code;
 
     @NotBlank
-    private String cellphone;
+    private String phone;
 
     @NotBlank
     private String address;
@@ -145,12 +145,12 @@ public class Customer implements Serializable {
         this.gender_code = gender_code;
     }
 
-    public String getCellphone() {
-        return cellphone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setCellphone(String cellphone) {
-        this.cellphone = cellphone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getAddress() {
