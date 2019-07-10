@@ -23,10 +23,16 @@ public class CustomerController {
     }
 
 
+    // create a order
     @PostMapping("/customers")
     public Customer createCustomer(@Valid @RequestBody Customer customer){
         return customerRepository.save(customer);
     }
+
+    // update a customer
+
+
+    // delete a customer
 
 
 }
